@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
    var e=Math.pow(a,b);
    var f=Math.sign(b);
    var g=Math.tanh(c);
-   var h=(Math.trunc(d));
+   var h=Math.trunc(d);
 
     res.send(e);
     res.send(f);
