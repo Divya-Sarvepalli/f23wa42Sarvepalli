@@ -1,21 +1,23 @@
 var express = require('express');
-var a=Math.random();
-var b=Math.random();
-var c=Math.random();
-var d=Math.random();
 var router = express.Router();
+/* GET users listing. */
+router.get('/', function (req, res, next) {
+    fake_url = "https://fake.com/path" + req.url
+    const url = new URL(fake_url)
+    const search_params = url.searchParams
+    if (req.method === 'GET') {
+        value = search_params.get("x")
+        if(value === null)
+        {
+            value=Math.round(Math.random()*999);
+        }     
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write('Math.hypot() applied to ' + value + ' is ' + Math.hypot(2,value));
+        res.write('<br>Math.ceil() applied to ' + value + ' is ' + Math.ceil(value))
+        res.write('<br>Math.clz32() applied to ' + value + ' is ' + Math.clz32(value))
+        res.end()
+    }
 
-router.get('/', function(req, res, next) {
-   var e=Math.pow(a,b);
-   var f=Math.sign(b);
-   var g=Math.tanh(c);
-   var h=Math.trunc(d);
+});
 
-    res.send(e);
-    res.send(f);
-    res.send(g);
-    res.send(h);
-  
-  });
-  
-  module.exports = router;
+module.exports = router;
