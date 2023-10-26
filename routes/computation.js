@@ -1,7 +1,7 @@
-var a=math.random();
-var b=math.random();
-var c=math.random();
-var d=math.random();
+var a=Math.random();
+var b=Math.random();
+var c=Math.random();
+var d=Math.random();
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
    var f=Math.sign(b);
    var g=Math.tanh(c);
    var h=(Math.trunc(d));
-   
+
     res.send(e);
     res.send(f);
     res.send(g);
